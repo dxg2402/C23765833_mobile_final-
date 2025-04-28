@@ -13,7 +13,7 @@ class WeatherService {
   final String apiKey = '7349f9b7543947bdb0e214800251004';
 
   Future<List<Map<String, String>>> fetchForecastWithMoonPhases(String city) async {
-    final url = Uri.parse('http://api.weatherapi.com/v1/forecast.xml?key=$apiKey&q=$city&days=14&aqi=no&alerts=no');
+    final url = Uri.parse('http://api.weatherapi.com/v1/forecast.xml?key=$apiKey&q=$city&days=7&aqi=no&alerts=no');
     try {
       final response = await http.get(url);
       if (response.statusCode == 200) {
@@ -275,7 +275,7 @@ class _MyAppState extends State<MyApp> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.brightness_2), label: "Moon Phases"),
-            BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: "14-Day Forecast"),
+            BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: "7-Day Forecast"),
             BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
           ],
         ),
